@@ -35,6 +35,17 @@ function rot13(encodedStr) {
   let decodedArr = []; // Your Result goes here
   // Only change code below this line
 
+	if (decodedCharCode < 65) {
+        decodedCharCode += 26;
+      }
+
+      
+      decodedStr += String.fromCharCode(decodedCharCode);
+    } else {
+      
+      decodedStr += str[i];
+    }
+
   return; //return decodedArr
 }
 
