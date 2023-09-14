@@ -31,27 +31,23 @@ const lookup = {
   ",": ",",
 };
 
-function rot13(encodedStr) {
-  let decodedArr = []; // Your Result goes here
-  // Only change code below this line
-
-	if (decodedCharCode < 65) {
-        decodedCharCode += 26;
-      }
-
-      
-      decodedStr += String.fromCharCode(decodedCharCode);
-    } else {
-      
-      decodedStr += str[i];
+function rot13(str) {
+  
+  function rot13Char(char) {
+    
+    if (/[A-Z]/.test(char)) {
+     
+      return lookup[char];
     }
 
-  return; //return decodedArr
+  
+    return char;
+  }
+
+  
+  return str.split('').map(rot13Char).join('');
 }
 
-// You can test your code by running the above function and printing it to console by pressing the run button at the top. To run it with input 36, uncomment the following line
 
-// console.log(rot13("SERR YBIR? NPPVBWBO"));
 
-// Do not change this line
-window.rot13 = rot13;
+   
